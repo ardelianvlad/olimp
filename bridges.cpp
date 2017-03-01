@@ -9,7 +9,7 @@ vector<int> *g;
 bool *used;
 int *tin, *fup;
 
-int timer, n;
+int timer, n, m;
 
 void dfs (int v, int p = -1) {
 	used[v] = true;
@@ -41,13 +41,13 @@ void find_bridges() {
 int main()
 {
     ifstream fin("in.txt");
-    int a, b;
-    fin >> n;
+    fin >> n >> m;
     used = new bool[n];
     tin = new int[n];
     fup = new int[n];
     g = new vector<int>[n];
-    for(int i=0; i<n; i++) {
+    int a, b;
+    for(int i=0; i<m; i++) {
         fin >> a >> b;
         g[a].push_back(b);
         g[b].push_back(a);
